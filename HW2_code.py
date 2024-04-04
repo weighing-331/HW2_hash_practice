@@ -1,12 +1,14 @@
 def count_unique_words(filename):
 
-    word_count = {} #建立dictionary儲存單字、紀錄次數
+    word_count = {} # 建立dictionary {"單字":出現次數}
+    total_lines = 0
 
-    #讀檔
+    # 讀檔
     with open(filename, 'r') as file:
-        
         for line in file:
-            word = line.strip()
+
+            total_lines += 1
+            word = line.strip() # 去除換行符號
 
             if word in word_count:
                 word_count[word] += 1
@@ -14,13 +16,12 @@ def count_unique_words(filename):
             else:
                 word_count[word] = 1
 
+    print("共有", total_lines, "行")
 
-    print("總共有", len(word_count), "個不重複的英文字")
+    print("共有", len(word_count), "個不重複的單字")
 
-
-    print("每一個英文字出現次數為何：")
+    print("每一個單字出現次數：")
     for word, count in word_count.items():
         print(word, ":", count)
-
 
 count_unique_words("hw2_data.txt")
