@@ -37,7 +37,9 @@ count_unique_words("hw2_data.txt")
 *************
 # HW2_code_sort
 在HW2基礎上，加入讓使用者選擇排序方式的功能
+
 ##code
+
 ```
 def count_unique_words(filename):
 
